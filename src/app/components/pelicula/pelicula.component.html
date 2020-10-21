@@ -1,6 +1,6 @@
 <!--Como es un proceso asincrono, en el preciso momento que es cargada la pelicula no tiene ningun valor-->
 <!--Esto solo va a construirse si la pelicula existe o ya esta cargada-->
-<div class="container main-container animated fadeIn fast">
+<div *ngIf="pelicula" class="container main-container animated fadeIn fast">
 
     <h1>{{pelicula.original_title}}</h1>
 
