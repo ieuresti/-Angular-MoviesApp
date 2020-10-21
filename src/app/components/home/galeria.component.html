@@ -1,0 +1,45 @@
+<br>
+
+<h1>{{titulo}}</h1>
+<hr>
+
+<!--Este div que enmarca todas las img se mostrara solo si cartelera(peliculas) tiene un dato-->
+<div class="row animated fadeIn fast" *ngIf="peliculas">
+
+    <div class="col-sm-6">
+        <!--Div caja img grande-->
+        <div class="row">
+            <div class="col-md-12 div-pic-1 puntero" [routerLink]="['/pelicula', peliculas[0].id, 'home']" [ngStyle]="{ 'background-image': 'url('+ (peliculas[0] | peliculaImagen) +')' }">
+                <p class="pic-titulo">{{peliculas[0].original_title}}</p>
+            </div>
+        </div>
+        <!--Div cajas img pequeñas-->
+        <div class="row">
+            <div class="col-md-6 div-pic-2 puntero" [routerLink]="['/pelicula', peliculas[1].id, 'home']" [ngStyle]="{ 'background-image': 'url('+ (peliculas[1] | peliculaImagen) +')' }">
+                <p class="pic-titulo">{{peliculas[1].original_title}}</p>
+            </div>
+            <div class="col-md-6 div-pic-2 puntero" [routerLink]="['/pelicula', peliculas[2].id, 'home']" [ngStyle]="{ 'background-image': 'url('+ (peliculas[2] | peliculaImagen) +')' }">
+                <p class="pic-titulo">{{peliculas[2].original_title}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <!--Div cajas img pequeñas-->
+        <div class="row">
+            <div class="col-md-6 div-pic-2 puntero" [routerLink]="['/pelicula', peliculas[3].id, 'home']" [ngStyle]="{ 'background-image': 'url('+ (peliculas[3] | peliculaImagen) +')' }">
+                <p class="pic-titulo">{{peliculas[3].original_title}}</p>
+            </div>
+            <div class="col-md-6 div-pic-2 puntero" [routerLink]="['/pelicula', peliculas[4].id, 'home']" [ngStyle]="{ 'background-image': 'url('+ (peliculas[4] | peliculaImagen) +')' }">
+                <p class="pic-titulo">{{peliculas[4].original_title}}</p>
+            </div>
+        </div>
+        <!--Div caja img grande-->
+        <div class="row">
+            <div class="col-md-12 div-pic-1 puntero" [routerLink]="['/pelicula', peliculas[5].id, 'home']" [ngStyle]="{ 'background-image': 'url('+ (peliculas[5] | peliculaImagen) +')' }">
+                <p class="pic-titulo">{{peliculas[5].original_title}}</p>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,19 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">MoviesApp</h1>
+        <p class="lead">Esta es una aplicación de peliculas</p>
+    </div>
+</div>
+
+<div class="container">
+    <br>
+
+    <!--Mandamos de aqui el obj peliculas con la data de cartelera-->
+    <!--Usamos [] solo cuando mandamos variables de Angular, por eso titulo no lleva-->
+    <app-galeria [peliculas]="cartelera | slice:0:6" titulo="Películas en cartelera"></app-galeria>
+
+    <app-galeria [peliculas]="populares | slice:0:6" titulo="Películas populares"></app-galeria>
+
+    <app-galeria [peliculas]="popularesNinos | slice:0:6" titulo="Películas populares infantiles"></app-galeria>
+
+</div>

@@ -1,0 +1,29 @@
+<div class="container main-container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Buscar:</label>
+                <!-- Con ngModel asociaremos la variable buscar-->
+                <input [(ngModel)]="buscar" name="buscar" type="text" class="form-control" (keyup.enter)="buscarPelicula()" placeholder="Buscar Película">
+            </div>
+        </div>
+    </div>
+
+    <!--Cards con las peliculas-->
+    <div class="row animated fadeIn fast">
+        <div class="card-columns">
+            <!--Las peliculas estan en peliculas service, variable peliculas-->
+            <div class="card" *ngFor="let pelicula of ps.peliculas">
+                <img [src]="pelicula | peliculaImagen" class="card-img-top img-fluid" [alt]="pelicula.original_title">
+                <div class="card-block">
+                    <h5 class="card-title">{{pelicula.original_title}}</h5>
+                    <p class="card-text text-justify">{{pelicula.overview | slice:0:300}}...</p>
+                    <!--Como estamos dentro del router-outlet ocupamos "/" y concatenamos lo demas para completar la url-->
+                    <button [routerLink]="['/pelicula', pelicula.id, 'buscar', buscar]" class="btn btn-outline-primary btn-block">Ver más...</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
